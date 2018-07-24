@@ -29,7 +29,7 @@ refresh_token = Token.new('1234', expires_in_seconds: 604800)
 token = Token.new('abcdefg', expiration_date: tomorrow, scope: 'readuser readposts', refresh_token: refresh_token)
 ```
 
-The Token class does not care what the values of the token and the scope are. You can use strings, numbers, arrays, or whatever you need for your use case.
+The Token class does not care what the type of the token and the scope are. You can use strings, numbers, arrays, or whatever you need for your use case.
 
 ### Persisting a token
 ```ruby
