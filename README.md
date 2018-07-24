@@ -44,9 +44,11 @@ token = Token.from_hash(hash)
 refresh_token = Token.new('1234')
 token = Token.new('abcdefg', expiration_date: tomorrow, scope: 'readuser readposts', refresh_token: refresh_token)
 
-token.token #abcdefg
+token.token # 'abcdefg'
+token.to_s # 'abcdefg'
 token.expiration_date # == tomorrow
 token.scope # 'readuser readposts'
+token.refresh_token # Token
 
 token.valid? # true
 token.invalid? # false
@@ -55,7 +57,6 @@ token.expires? # true
 token.refreshable? # true
 token.validate! # Raises InvalidTokenError if valid? is false
 token.validate_refreshable! # Raises TokenNotRefreshableError if refreshable? is false
-token.to_s # abcdefg
 
 token.refresh_token.valid? # true
 token.refresh_token.invalid? # false
@@ -64,4 +65,3 @@ token.refresh_token.expires? # false
 token.refresh_token.refreshable? # false
 token.refresh_token.validate! # Raises InvalidTokenError if valid? is false
 token.refresh_token.validate_refreshable! # Raises TokenNotRefreshableError if refreshable? is false
-token.refresh_token.to_s # 1234
