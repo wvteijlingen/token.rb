@@ -1,6 +1,6 @@
 # token.rb
 
-A small Ruby lib that provides a Token class for a generic expirable and refreshable token.
+A small Ruby class that provides a Token class for a generic expirable and refreshable token.
 
 ## Usage
 
